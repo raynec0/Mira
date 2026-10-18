@@ -1,0 +1,80 @@
+name: Mira
+options:
+  bundleIdPrefix: com.raynec
+  deploymentTarget:
+    iOS: "17.0"
+  developmentLanguage: zh-Hans
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    SWIFT_STRICT_CONCURRENCY: minimal
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: "1"
+targets:
+  Mira:
+    type: application
+    platform: iOS
+    sources:
+      - path: Mira
+    scheme:
+      testTargets:
+        - MiraTests
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.raynec.mira
+        PRODUCT_NAME: Mira
+        TARGETED_DEVICE_FAMILY: "1,2"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        GENERATE_INFOPLIST_FILE: NO
+        ENABLE_PREVIEWS: YES
+    info:
+      path: Support/Info.plist
+      properties:
+        CFBundleDisplayName: Mira
+        CFBundleDevelopmentRegion: zh-Hans
+        CFBundleLocalizations: [zh-Hans, en]
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        LSRequiresIPhoneOS: true
+        UILaunchScreen: {}
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UIBackgroundModes: [fetch, processing]
+        BGTaskSchedulerPermittedIdentifiers: [com.raynec.mira.refresh]
+        UIFileSharingEnabled: true
+        LSSupportsOpeningDocumentsInPlace: true
+        ITSAppUsesNonExemptEncryption: false
+        NSAppTransportSecurity:
+          NSAllowsArbitraryLoads: true
+        NSCalendarsFullAccessUsageDescription: Mira 需要访问日历，才能帮你查看和创建日程。
+        NSCalendarsUsageDescription: Mira 需要访问日历，才能帮你查看和创建日程。
+        NSRemindersFullAccessUsageDescription: Mira 需要访问提醒事项，才能帮你管理待办。
+        NSRemindersUsageDescription: Mira 需要访问提醒事项，才能帮你管理待办。
+        NSContactsUsageDescription: Mira 需要访问通讯录，才能帮你找到联系人的电话和邮箱。
+        NSLocationWhenInUseUsageDescription: Mira 需要你的位置来查询天气和附近信息。
+        NSMicrophoneUsageDescription: Mira 需要麦克风来进行语音输入。
+        NSSpeechRecognitionUsageDescription: Mira 需要语音识别把你说的话转成文字。
+        NSPhotoLibraryUsageDescription: Mira 需要访问照片，以便你发送图片给智能体。
+        NSPhotoLibraryAddUsageDescription: Mira 需要把生成的图片保存到你的相册。
+        NSCameraUsageDescription: Mira 需要相机来拍照发送给智能体。
+        NSFaceIDUsageDescription: Mira 使用面容 ID 保护你的对话。
+  MiraTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: MiraTests
+    dependencies:
+      - target: Mira
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
