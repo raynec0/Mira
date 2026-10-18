@@ -58,10 +58,10 @@ private struct ChatStylePreview: View {
     ChatStylePreview().preferredColorScheme(.dark)
 }
 
-#Preview("信息 · 大字体与减少透明度") {
+#Preview("信息 · 大字体") {
     ChatStylePreview()
         .environment(\.dynamicTypeSize, .accessibility2)
-        .environment(\.accessibilityReduceTransparency, true)
-        .environment(\.accessibilityReduceMotion, true)
+    // Reduce Transparency and Reduce Motion are read-only environment values.
+    // Exercise those modes through the simulator or device Accessibility settings.
 }
 #endif

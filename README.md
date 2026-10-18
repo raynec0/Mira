@@ -44,7 +44,7 @@
 
 ### 预览与验证
 
-在 Xcode 打开 `ChatStylePreview.swift` 的 Canvas，可预览浅色、深色、大字体与减少透明度三种状态，发送操作仅修改预览内存，不调用模型。Liquid Glass 使用 iOS 26 起提供的系统 API，在后续系统上由系统渲染；没有使用假定的 iOS 27 专属接口。
+在 Xcode 打开 `ChatStylePreview.swift` 的 Canvas，可预览浅色、深色、大字体三种状态，发送操作仅修改预览内存，不调用模型。“减少透明度 / 减弱动态效果”需在模拟器或真机的系统辅助功能设置中测试。Liquid Glass 使用 iOS 26 起提供的系统 API，在后续系统上由系统渲染；没有使用假定的 iOS 27 专属接口。
 
 CI 使用 Xcode 26.0，并先在 iPhone 模拟器运行消息分组测试，再构建 IPA。本地可运行：
 
